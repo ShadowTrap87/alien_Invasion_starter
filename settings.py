@@ -1,8 +1,7 @@
 """
 Program: settings.py
 Author: Kennett Aguilar-Zaldana
-Purpose: Stores all configuration settings for the Alien Invasion game including 
-screen dimensions, ship properties, bullet properties, and asset file paths.
+Purpose: Stores all configuration settings for the Alien Invasion game.
 Starter Code: None
 Date: 04/08/26
 """
@@ -13,7 +12,7 @@ class Settings:
     """
     
     def __init__(self):
-        """Initialize game settings for screen, ship, bullets, and assets.
+        """Initialize game settings.
         """
         self.name: str = 'Alien Invasion'
         self.screen_w = 1200

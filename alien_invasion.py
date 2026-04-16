@@ -69,6 +69,8 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _check_collisions(self):
+        """Handles all collision detection in the game.
+        """
         # check collisions for ship
         if self.ship.check_collisions(self.alien_fleet.fleet):
             self._check_game_status()
@@ -88,6 +90,8 @@ class AlienInvasion:
         
 
     def _check_game_status(self):
+        """Updates the game state after a collision.
+        """
         
         if self.game_stats.ship_left > 0:
             self.game_stats.ship_left -= 1
@@ -100,6 +104,8 @@ class AlienInvasion:
 
 
     def _reset_level(self):
+        """Resets the game state for a new level or after the player loses a life.
+        """
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()
