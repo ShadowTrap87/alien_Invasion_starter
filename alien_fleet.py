@@ -36,6 +36,7 @@ class AlienFleet:
                     continue
                 self._create_alien(current_x, currnet_y)
 
+
     def calculate_offsets(self, alien_w, alien_h, screen_w, fleet_w, fleet_h):
         half_screen = self.settings.screen_h//2
         fleet_horizontal_space = fleet_w * alien_w
@@ -67,6 +68,25 @@ class AlienFleet:
         new_alien = Alien(self, current_x, currnet_y)
                           
         self.fleet.add(new_alien)
+
+    def _check_fleet_edges(self):
+        alien: Alien
+        for alien in self.fleet:
+            if alien.check_edges():
+                self._drop_alien_fleet()
+                self.fleet_direction *= -1
+                break
+
+
+    def _drop_alien_fleet(self):
+        for alien in self.fleet:
+            alien.y += self.fleet_drop_speed
+
+
+    def update_fleet(self):
+        self._check_fleet_edges()
+        self.fleet.update()
+
 
     def draw(self):
         alien: 'Alien'
