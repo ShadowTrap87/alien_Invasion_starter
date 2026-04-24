@@ -1,8 +1,8 @@
 """
-Program: bullet.py
+Program: alien.py
 Author: Kennett Aguilar-Zaldana
-Purpose: Defines the Bullet class which represents a single laser bullet fired 
-by the player's ship.
+Purpose: Defines the Alien class which represents a single alien enemy 
+in the Alien Invasion game. Handles movement, edge detection, and drawing.
 Starter Code: None
 Date: 04/08/26
 """
@@ -21,7 +21,7 @@ class Alien(Sprite):
         Sprite (pygame.sprite.Sprite): Base sprite class.
     """
     def __init__(self, fleet: 'AlienFleet', x: float, y: float):
-        """_summary_
+        """Initialize an alien at the given position within the fleet
 
         Args:
             fleet (AlienFleet): The alien fleet this alien belongs to.
